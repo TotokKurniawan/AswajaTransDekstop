@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="198" pageHeight="273" columnWidth="156" leftMargin="21" rightMargin="21" topMargin="21" bottomMargin="21" uuid="997339eb-a46b-47f5-a36b-3c01a4143f34">
+	<property name="ireport.zoom" value="2.8531167061100042"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="97"/>
+	<parameter name="kode" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM pelanggan where NIK = $P{kode};]]>
+	</queryString>
+	<field name="NIK" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Pelanggan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="No_Telp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="58" y="13" width="98" height="18" uuid="cbc0684a-7e39-4218-94b4-335d8e502f5b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASWAJA TRANS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="113" height="57" uuid="a734b518-cc8b-4d1c-a1d6-476a7c9f4df6"/>
+				<imageExpression><![CDATA["C:\\Users\\ndraa\\Downloads\\130741325_102303021757137_4068977240534830252_n.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="56" width="156" height="1" uuid="0975c03b-4889-48bd-952f-195f363548f4"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="156" height="1" uuid="49271ac9-fc8d-4f54-9246-567cfc6ced1e"/>
+			</line>
+			<staticText>
+				<reportElement positionType="Float" x="58" y="31" width="98" height="18" uuid="4c165754-3c33-4ba7-88d1-f1ff61f939eb"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kartu Member]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="121" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="120" width="156" height="1" uuid="ffd38dcd-9148-40ce-a557-a27afb4917c8"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-56" width="1" height="177" uuid="03621d39-718f-4d63-b97a-ce9a4d43307a"/>
+			</line>
+			<line>
+				<reportElement x="156" y="-57" width="1" height="177" uuid="03b61b11-46ec-4bd8-9cbe-6463bdbbeca6"/>
+			</line>
+			<textField>
+				<reportElement x="68" y="0" width="74" height="20" uuid="4cdc06d4-9450-4eaa-b0f1-e2dd2f5342e1"/>
+				<textFieldExpression><![CDATA[$F{NIK}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="68" y="20" width="74" height="20" uuid="0c50e5ec-de89-4dc5-8886-f48e16a0f71c"/>
+				<textFieldExpression><![CDATA[$F{Nama_Pelanggan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="68" y="40" width="74" height="20" uuid="162fe317-3bd2-4a82-afec-9917ab59cbc8"/>
+				<textFieldExpression><![CDATA[$F{Alamat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="0" width="100" height="20" uuid="3c323728-b092-4d44-999d-cfaac5baf775"/>
+				<text><![CDATA[NIK 	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="20" width="100" height="20" uuid="2cda6fcf-2906-40b6-a776-e1aed1151554"/>
+				<text><![CDATA[Member :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="40" width="100" height="20" uuid="476f5628-dcc1-45d9-abd9-383d9002866f"/>
+				<text><![CDATA[Alamat 	:]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="0" y="60" width="155" height="60" uuid="63ca21cb-0e65-4355-9e49-c7eaf6b08958"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39 (Extended)" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA["1234"]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+		</band>
+	</columnHeader>
+</jasperReport>

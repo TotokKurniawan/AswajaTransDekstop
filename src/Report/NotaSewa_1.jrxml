@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="198" pageHeight="425" columnWidth="174" leftMargin="12" rightMargin="12" topMargin="20" bottomMargin="20" uuid="a49e4bcf-d5eb-410a-93e6-d2e4f523c1f5">
+	<property name="ireport.zoom" value="2.143588810000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="105"/>
+	<parameter name="Id_Sewa" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT 
+    *,
+    sewa.id_Sewa AS sewa_id_Sewa,
+    sewa.Tgl_sewa AS sewa_Tgl_sewa,
+    sewa.bayar AS sewa_bayar,
+    sewa.`Sisa yang harus dibayar` AS sewa_Sisa_yang_harus_dibayar,
+    sewa.StatusBayar AS sewa_StatusBayar,
+    sewa.Total_Harga AS sewa_Total_Harga,
+    sewa.Total_Sewa AS sewa_Total_Sewa,
+    sewa.NIK AS sewa_NIK,
+    sewa.id AS sewa_id,
+    pelanggan.NIK AS pelanggan_NIK,
+    pelanggan.Nama_Pelanggan AS pelanggan_Nama_Pelanggan,
+    pelanggan.No_Telp AS pelanggan_No_Telp,
+    pelanggan.Alamat AS pelanggan_Alamat,
+    mobil.Nopol AS mobil_Nopol,
+    mobil.MerkMobil AS mobil_MerkMobil,
+    mobil.TypeMobil AS mobil_TypeMobil,
+    mobil.harga AS mobil_harga,
+    mobil.Status AS mobil_Status
+FROM
+    sewa sewa
+    INNER JOIN detail_sewa detail_sewa ON sewa.id_Sewa = detail_sewa.id_Sewa
+    INNER JOIN pelanggan pelanggan ON sewa.NIK = pelanggan.NIK
+    INNER JOIN mobil mobil ON detail_sewa.Nopol = mobil.Nopol 
+WHERE
+    sewa.id_Sewa = $P{Id_Sewa} ;]]>
+	</queryString>
+	<field name="id_Sewa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tgl_sewa" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bayar" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Sisa yang harus dibayar" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="StatusBayar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Total_Harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Total_Sewa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NIK" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nopol" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tgl_Kembali" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Lama_Pinjam" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal_pengembalian" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subtotal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Denda" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Keterangan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama_Pelanggan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="No_Telp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Alamat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MerkMobil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TypeMobil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sewa_id_Sewa" class="java.lang.String"/>
+	<field name="sewa_Tgl_sewa" class="java.sql.Date"/>
+	<field name="sewa_bayar" class="java.lang.Integer"/>
+	<field name="sewa_Sisa_yang_harus_dibayar" class="java.lang.Integer"/>
+	<field name="sewa_StatusBayar" class="java.lang.String"/>
+	<field name="sewa_Total_Harga" class="java.lang.Integer"/>
+	<field name="sewa_Total_Sewa" class="java.lang.Integer"/>
+	<field name="sewa_NIK" class="java.lang.String"/>
+	<field name="sewa_id" class="java.lang.Integer"/>
+	<field name="pelanggan_NIK" class="java.lang.String"/>
+	<field name="pelanggan_Nama_Pelanggan" class="java.lang.String"/>
+	<field name="pelanggan_No_Telp" class="java.lang.String"/>
+	<field name="pelanggan_Alamat" class="java.lang.String"/>
+	<field name="mobil_Nopol" class="java.lang.String"/>
+	<field name="mobil_MerkMobil" class="java.lang.String"/>
+	<field name="mobil_TypeMobil" class="java.lang.String"/>
+	<field name="mobil_harga" class="java.lang.String"/>
+	<field name="mobil_Status" class="java.lang.String"/>
+	<title>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="64" y="37" width="110" height="18" uuid="ab114796-e753-4cdc-bc08-1e469e2b22af"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Probolinggo Jawa Timur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="17" width="110" height="21" uuid="21ffe2aa-7172-40be-a665-b20123ebdbc5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jl Kelud, RT 5, RW 2, No 1D, Ketapang, Kademangan]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="-14" width="113" height="69" uuid="baadb700-1f83-498a-a3b0-314c050a3c18"/>
+				<imageExpression><![CDATA["C:\\Users\\ndraa\\Downloads\\130741325_102303021757137_4068977240534830252_n.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="Float" x="64" y="0" width="110" height="18" uuid="e95c7add-b21e-4723-935a-5825ed5ab129"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASWAJA TRANS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="3" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="174" height="2" uuid="b2b59eb8-993e-4ba7-b9ce-5a5337ee36d5"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="89" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="47" y="0" width="81" height="17" uuid="041b9fb7-390f-4068-acbd-039f7c1e09d1"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="43" width="100" height="13" uuid="69b8a013-26a3-48e6-be85-c4dc350af995"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Lama Sewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="13" uuid="e52a5eeb-40e8-408a-b03b-19ac76d4934f"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Nama Pelanggan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="17" width="100" height="13" uuid="fe9bde01-bab5-4af8-89a5-a6948991422e"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Kode Struk]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="81" y="17" width="93" height="13" uuid="40875070-adbd-4da3-bc8e-9938e823bc51"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Id_Sewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="30" width="100" height="13" uuid="4a804503-fc71-48a9-8d78-394625e3dad7"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nama_Pelanggan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="43" width="100" height="13" uuid="7fc16f55-6bf1-480e-8cb6-f7061827fcba"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Lama_Pinjam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="66" width="34" height="20" uuid="6ca38ea2-16a0-439d-92ef-31e4a9cbc5e8"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[MerkMobil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="66" width="46" height="20" uuid="b78dff5d-0ee1-4e6f-a7ad-a8255bd2704a"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[subtotal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="94" y="66" width="35" height="20" uuid="06047c13-da90-44d9-a8d1-95164347ba0c"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[Kembali]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="66" width="30" height="20" uuid="d0c636cb-dbc0-498a-ae30-d2611f66c1d6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[sewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="66" width="36" height="20" uuid="dca781be-2abc-4c0f-b810-a1951caea5b8"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[Nopol]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="84" width="174" height="2" uuid="5469cf14-9797-4d3a-9cfb-81b59dea5059"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="36" y="0" width="34" height="20" uuid="4b51749e-8713-43bd-84da-38908429b2d9"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MerkMobil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="0" width="46" height="20" uuid="712e9b04-a1dd-4184-9b37-6715e619a691"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="35" height="20" uuid="e1633346-dd4a-48b1-8569-a5edbba4ba86"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tgl_Kembali}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="0" width="30" height="20" uuid="40b5b6dd-89f0-4e81-bad8-7ded33a208f1"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Tgl_sewa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="36" height="20" uuid="6ea1daa1-16c5-4525-9fa5-02cd77206f4b"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nopol}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="174" height="2" uuid="57651212-47c5-4458-8893-a1788b7591ca"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="2" width="52" height="13" uuid="e14cebd6-b726-408a-b122-24ee92cc0521"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="15" width="52" height="13" uuid="fd050550-8dab-4cde-93af-1019efcf4cfc"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Sisa yang harus dibayar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="81" y="2" width="100" height="13" uuid="b4bc3fde-606a-48c9-bc74-0dc8f1980f3d"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[DP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="15" width="100" height="13" uuid="82314bd1-93a3-44e0-aa5f-7018bf51cf2b"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Sisa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="81" y="28" width="100" height="13" uuid="2369837f-731d-4f72-b1f4-ad75a6b34f51"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Total Harga]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="129" y="28" width="52" height="13" uuid="cca44289-91dc-4736-a751-0751f2a7e67a"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Total_Harga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="174" height="2" uuid="99c865e7-e3b8-42ed-a90e-95dd8e2cf664"/>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+					<topPen lineWidth="0.5" lineStyle="Dashed"/>
+					<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+					<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="2" width="100" height="20" uuid="49d8438d-15b5-4b5b-9c42-72f030e1a291"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TERIMA KASIH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="34" width="100" height="20" uuid="d832ee70-63b2-46e9-8673-11bba0283e04"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASWAJA TRANS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="14" width="174" height="20" uuid="e2f5ba3b-cfc5-44a7-90ca-78850672c083"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telah Berlangganan Dengan Kami]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
